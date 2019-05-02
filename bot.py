@@ -14,6 +14,15 @@ class SlackBotTest(unittest.TestCase):
         message=bot.markov_chain(text)
         self.assertEqual(message, "今日は晴れです")
 
+    def test_markov_chain_texts(self):
+        bot = SlackBot()
+        text = "今日は晴れです\n" \
+               "今日は雨です\n" \
+               "今日は雨だね\n" \
+               "今日は雨です"
+        message = bot.markov_chain(text)
+        self.assertEqual(message, "今日は雨です")
+
 class SlackBot:
     def __init__(self):
         self.slack_token=os.environ["SLACK_API_TOKEN"]
