@@ -10,12 +10,9 @@ class SlackBotTest(unittest.TestCase):
 
     def test_markov_chain(self):
         bot=SlackBot()
-        text="今日は晴れです\n" \
-             "今日は雨です\n" \
-             "今日は雨だね\n" \
-             "今日は雨です"
+        text="今日は晴れです"
         message=bot.markov_chain(text)
-        self.assertEqual(message, "今日は雨です")
+        self.assertEqual(message, "今日は晴れです")
 
 class SlackBot:
     def __init__(self):
@@ -30,7 +27,7 @@ class SlackBot:
         )
 
     def markov_chain(self,text):
-        return "今日は雨です"
+        return "今日は晴れです"
 
 if __name__=="__main__":
     unittest.main()
