@@ -60,7 +60,7 @@ class SlackBot:
                         begin_sentences.append(state)
         state = random.choice(begin_sentences)
         out = list(state)
-        for i in range(3):
+        for i in range(4):
             # 最も可能性が高い遷移先
             state=model[state].most_common(1)[0][0]
             out.extend(state[-1])
