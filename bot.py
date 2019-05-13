@@ -40,7 +40,7 @@ class SlackBot:
 
     def markov_chain(self,texts):
         N=3
-        mecab = MeCab.Tagger("-Owakati")
+        mecab = MeCab.Tagger("-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
         begin="__BEGIN__"
         end="__END__"
         model=defaultdict(Counter)
