@@ -9,7 +9,7 @@ import MeCab
 class SlackBotTest(unittest.TestCase):
     def test_post_message(self):
         bot=SlackBot()
-        bot.post_message("Hello")
+        # bot.post_message("Hello")
 
     def test_markov_chain(self):
         bot=SlackBot()
