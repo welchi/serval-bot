@@ -12,7 +12,7 @@ from file_reader import FileReader
 class SlackBotTest(unittest.TestCase):
     def test_post_message(self):
         bot=SlackBot()
-        bot.post_message("Hello")
+        # bot.post_message("Hello")
 
     def test_markov_chain(self):
         bot=SlackBot()
@@ -38,7 +38,7 @@ class SlackBotTest(unittest.TestCase):
             text=reader.read_file("./data/kf{}.txt".format(i+1))
             texts.extend(r.findall(text))
         message=bot.markov_chain(''.join(texts))
-        bot.post_message(message)
+        # bot.post_message(message)
 
 
 
