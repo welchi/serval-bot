@@ -40,8 +40,6 @@ class SlackBotTest(unittest.TestCase):
         message=bot.markov_chain(''.join(texts))
         # bot.post_message(message)
 
-
-
 class SlackBot:
     def __init__(self):
         self.slack_token=os.environ["SLACK_API_TOKEN"]
@@ -56,7 +54,8 @@ class SlackBot:
 
     def markov_chain(self,texts):
         N=3
-        mecab = MeCab.Tagger("-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
+        # mecab = MeCab.Tagger("-Owakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
+        mecab = MeCab.Tagger("-Owakati")
         begin="__BEGIN__"
         end="__END__"
         model=defaultdict(Counter)
