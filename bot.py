@@ -64,6 +64,8 @@ class SlackBot:
             # 最も可能性が高い遷移先
             state=model[state].most_common(1)[0][0]
             out.extend(state[-1])
+            if state[-1]==end:
+                break
         text = ''.join(out).lstrip(begin).rstrip(end)
         return text
 
